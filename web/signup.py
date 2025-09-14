@@ -1,4 +1,3 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
@@ -56,11 +55,11 @@ class SignupPage:
 
         # 나머지 필드 입력
         inputs = {
-            'member_id': "test1",
+            'member_id': "test0",
             'name': "김영희",
             'mobile2': "1234",
             'mobile3': "5678",
-            'email1': "test1@naver.com",
+            'email1': "abc0@naver.com",
         }
         for field_id, val in inputs.items():
             self.wait.until(EC.visibility_of_element_located((By.ID, field_id))).send_keys(val)
