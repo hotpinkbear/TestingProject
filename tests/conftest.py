@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 
 # 함수 단위로 실행되는 드라이버
 @pytest.fixture
-def driver_function():
+def driver():
     opts = Options()
     if os.getenv("HEADLESS", "false").lower() == "true":
         opts.add_argument("--headless=new") # GUI 없이 Chrome 실행

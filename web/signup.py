@@ -86,7 +86,7 @@ class SignupPage:
             alert = self.wait.until(EC.alert_is_present())
             msg = alert.text.strip()
             if "※" in msg:
-                msg = alert.text.split("※")[0]
+                msg = alert.text.split("※")[0].strip()
             return msg
         # 가입완료 화면 메시지 확인
         except:
@@ -114,13 +114,13 @@ class SignupPage:
         return pw_len, pwcfm_len
 
 # 함수 확인용
-if __name__ == "__main__":
-    driver = webdriver.Chrome()
-    try :
-        page = SignupPage(driver)
-        page.open()
-        idmsg = page.input_id("slnp779")
-        print(f"flash message : {idmsg}")
+# if __name__ == "__main__":
+#     driver = webdriver.Chrome()
+#     try :
+#         page = SignupPage(driver)
+#         page.open()
+#         idmsg = page.input_id("slnp779")
+#         print(f"flash message : {idmsg}")
 
-    finally :
-        driver.quit()
+#     finally :
+#         driver.quit()
